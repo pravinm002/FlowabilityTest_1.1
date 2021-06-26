@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <title>FlowabilityTest</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript" src="com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="com/ShellResize.js"></script>
+
+
+    <script type="text/javascript ">
+
+            var processedUnload = false ;
+            window . onbeforeunload = function ( e ) {
+                doUnload () ;
+                    };
+            window . onunload = function ( e ) {
+                doUnload () ;
+                    };
+
+                    function doUnload () {
+                    if ( processedUnload ) return ;
+                            processedUnload = true ;
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <iframe id="shellHolder" style="position:absolute; top:0px; left:0px; width:1280px; height:720px;" frameborder="0" scrolling="no"></iframe>
+</body>
+
+<script>$(document).ready(function () {
+        onResizeFn();
+        $(window).resize(onResizeFn);
+        $("#shellHolder").attr("src", "start.html");
+    });
+
+    function myfun() {
+        console.log('hello');
+    }
+    window.onbeforeunload = function () {
+        myfun();
+        return 'Are you sure you want to leave?';
+    };</script>
+</html>
